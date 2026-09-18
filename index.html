@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Lab 1 — Website Cá Nhân Của </title>
+    <title>DevOps Lab 1 — Trang Chủ</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -24,7 +24,8 @@
             text-align: center;
         }
         h1 { color: #667eea; margin-bottom: 8px; font-size: 32px; }
-        h2 { color: #764ba2; margin-bottom: 24px; font-size: 18px; font-weight: normal; }
+        h2 { color: #764ba2; margin-bottom: 12px; font-size: 18px; font-weight: normal; }
+        h3, h4 { color: #555; margin-bottom: 8px; }
         .info { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 16px 0; text-align: left; }
         .info p { margin: 8px 0; }
         .badge {
@@ -38,11 +39,23 @@
         }
         .footer { margin-top: 24px; font-size: 13px; color: #999; }
         .status { color: #38a169; font-weight: bold; }
+        nav { margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+        nav a { color: #667eea; text-decoration: none; font-weight: bold; margin: 0 10px; transition: 0.3s; }
+        nav a:hover { color: #764ba2; }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="avatar.jpg" alt="Avatar" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 3px solid #667eea;">
+        <!-- Thanh điều hướng Navigation -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Ảnh đại diện -->
+        <img src="avatar.jpg" alt="avatar" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 3px solid #667eea;">
+        
         <h1> Hello, DevOps!</h1>
         <h2>Lab 1 — Trải nghiệm CI/CD Pipeline</h2>
         <h3>An ba to com</h3>
@@ -51,7 +64,7 @@
         <div class="info">
             <p> <strong>Bài học: So 1</strong> DevOps Lab 1 — Tổng quan</p>
             <p> <strong>Deploy bởi:</strong> GitHub Actions CI/CD</p>
-            <p> <strong>Ngày deploy:</strong> <span id="date"></span></p>
+            <p> <strong>Ngày deploy:</strong> <span class="date"></span></p>
             <p> <strong>Pipeline status:</strong> <span class="status"> Automated</span></p>
         </div>
 
@@ -60,18 +73,15 @@
             <span class="badge">CSS3</span>
             <span class="badge">Git</span>
             <span class="badge">GitHub Actions</span>
-            <span class="badge">CI/CD</span>
-            <span class="badge">DevOps</span>
         </div>
 
         <div class="footer">
             <p>Deployed automatically via GitHub Actions Pipeline</p>
-            <p> Push code → CI Build → Auto Deploy → Live! </p>
         </div>
     </div>
 
     <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('vi-VN');
+        document.querySelector('.date').textContent = new Date().toLocaleDateString('vi-VN');
     </script>
 </body>
 </html>
